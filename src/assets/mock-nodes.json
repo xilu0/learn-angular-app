@@ -1,0 +1,7 @@
+[
+  { "id": "1", "label": "Angular Core" },
+  { "id": "2", "label": "Components" },
+  { "id": "3", "label": "Templates" },
+  { "id": "4", "label": "Directives" },
+  { "id": "5", "label": "Services & DI" }
+]

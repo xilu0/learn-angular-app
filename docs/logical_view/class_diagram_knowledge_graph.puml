@@ -1,0 +1,57 @@
+@startuml
+!theme vibrant
+title Logical View - Class Diagram (KnowledgeGraphModule)
+
+package "Models" {
+  class KnowledgeNode {
+    +id: string
+    +title: string
+    +description: string
+  }
+
+  class KnowledgeEdge {
+    +source: string
+    +target: string
+    +label: string
+  }
+}
+
+package "Services (Core)" {
+  class KnowledgeDataService {
+    +getNodes(): Observable<KnowledgeNode[]>
+    +getEdges(): Observable<KnowledgeEdge[]>
+  }
+}
+
+package "Components (Features/KnowledgeGraph)" {
+  class KnowledgeGraphPageComponent {
+    -nodes: KnowledgeNode[]
+    -edges: KnowledgeEdge[]
+    +selectedNode: KnowledgeNode
+  }
+
+  class GraphVisualizerComponent {
+    +nodes: KnowledgeNode[]
+    +edges: KnowledgeEdge[]
+    +nodeSelected: EventEmitter<KnowledgeNode>
+  }
+
+  class NodeDetailComponent {
+    +node: KnowledgeNode
+  }
+
+  class SearchBarComponent {
+    +searchQuery: EventEmitter<string>
+  }
+}
+
+KnowledgeGraphPageComponent --> KnowledgeDataService : uses
+KnowledgeGraphPageComponent *-- "1" GraphVisualizerComponent
+KnowledgeGraphPageComponent *-- "1" NodeDetailComponent
+KnowledgeGraphPageComponent *-- "1" SearchBarComponent
+
+GraphVisualizerComponent ..> KnowledgeNode : (Input)
+GraphVisualizerComponent ..> KnowledgeEdge : (Input)
+NodeDetailComponent ..> KnowledgeNode : (Input)
+
+@enduml

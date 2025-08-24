@@ -1,0 +1,23 @@
+@startuml
+!theme vibrant
+
+left to right direction
+
+actor "User (Beginner Developer)" as User
+
+rectangle "Knowledge Graph System" {
+  usecase "Browse Knowledge Graph" as UC1
+  usecase "Search for a Topic" as UC2
+  usecase "View Learning Path" as UC3
+  usecase "Filter by Category" as UC4
+  usecase "View Detailed Information" as UC5
+}
+
+User -- UC1
+User -- UC2
+User -- UC3
+
+UC1 <.. UC4 : <<extend>>
+UC1 <.. UC5 : <<extend>>
+
+@enduml

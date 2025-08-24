@@ -1,0 +1,35 @@
+@startuml
+!theme vibrant
+hide footbox
+
+title Sequence Diagram - Browsing the Knowledge Graph
+
+actor User
+
+participant KnowledgeGraphPageComponent as Page
+participant KnowledgeDataService as DataService
+participant GraphVisualizerComponent as Visualizer
+participant NodeDetailComponent as Detail
+
+activate Page
+Page -> DataService: getNodes() & getEdges()
+activate DataService
+
+DataService --> Page: Observable<Node[]>, Observable<Edge[]>
+deactivate DataService
+
+Page -> Visualizer: Set [nodes] and [edges] inputs
+activate Visualizer
+
+User -> Visualizer: Clicks on a node
+Visualizer -> Page: Emits nodeSelected event
+deactivate Visualizer
+
+Page -> Detail: Set [node] input
+activate Detail
+
+Detail --> User: Display node details
+deactivate Detail
+deactivate Page
+
+@enduml

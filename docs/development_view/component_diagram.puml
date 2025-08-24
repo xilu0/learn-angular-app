@@ -1,0 +1,32 @@
+@startuml
+!theme vibrant
+
+title Development View - Component Diagram
+
+package "src/app" {
+  component "AppModule" as App
+  component "AppRoutingModule" as AppRouting
+
+  package "core" {
+    component "CoreModule"
+  }
+
+  package "shared" {
+    component "SharedModule"
+  }
+
+  package "features" {
+    component "KnowledgeGraphModule" as KnowledgeGraph
+    component "LearningPathModule" as LearningPath
+  }
+}
+
+App --> CoreModule
+App --> AppRouting
+App --> KnowledgeGraph
+App --> LearningPath
+
+KnowledgeGraph --> SharedModule
+LearningPath --> SharedModule
+
+@enduml
