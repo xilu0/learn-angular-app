@@ -1,1 +1,13 @@
-<p>node-detail works!</p>
+<div class="node-detail-container">
+  @if (node) {
+    <h3>{{ node.title }}</h3>
+    <p><strong>Category:</strong> {{ node.category }}</p>
+    <p>{{ node.description }}</p>
+    @if (node.details) {
+      <h4>Details:</h4>
+      <pre>{{ node.details }}</pre>
+    }
+  } @else {
+    <p>Select a node to see details.</p>
+  }
+</div>

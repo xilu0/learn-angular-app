@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { KnowledgeNode } from '../../../../core/services/knowledge-data.service';
 
 @Component({
   selector: 'app-node-detail',
@@ -9,6 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./node-detail.component.css']
 })
 export class NodeDetailComponent implements OnInit {
+
+  @Input() node: KnowledgeNode | null = null;
 
   constructor() { }
 

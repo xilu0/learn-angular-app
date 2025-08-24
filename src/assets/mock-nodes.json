@@ -1,7 +1,37 @@
 [
-  { "id": "1", "label": "Angular Core" },
-  { "id": "2", "label": "Components" },
-  { "id": "3", "label": "Templates" },
-  { "id": "4", "label": "Directives" },
-  { "id": "5", "label": "Services & DI" }
+  {
+    "id": "1",
+    "title": "Angular Core",
+    "description": "The fundamental building blocks of Angular applications.",
+    "category": "Core Concepts",
+    "details": "Includes NgModules, bootstrapping, and the Angular CLI."
+  },
+  {
+    "id": "2",
+    "title": "Components",
+    "description": "The main building blocks for UI in Angular applications.",
+    "category": "UI Elements",
+    "details": "Components combine a template, a class, and metadata."
+  },
+  {
+    "id": "3",
+    "title": "Templates",
+    "description": "HTML with Angular-specific syntax for dynamic views.",
+    "category": "UI Elements",
+    "details": "Templates use interpolation, property binding, and event binding."
+  },
+  {
+    "id": "4",
+    "title": "Directives",
+    "description": "Classes that add behavior to elements in Angular applications.",
+    "category": "UI Elements",
+    "details": "Includes structural directives (*ngIf, *ngFor) and attribute directives (ngStyle, ngClass)."
+  },
+  {
+    "id": "5",
+    "title": "Services & DI",
+    "description": "Mechanisms for sharing data and functionality across components.",
+    "category": "Core Concepts",
+    "details": "Services are singletons, and Dependency Injection (DI) is used to provide them."
+  }
 ]

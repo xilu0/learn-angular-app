@@ -2,10 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
+import * as mockNodes from '../../../assets/mock-nodes.json';
+import * as mockEdges from '../../../assets/mock-edges.json';
+
 export interface KnowledgeNode {
   id: string;
-  label: string;
-  type?: string;
+  title: string;
+  description: string;
+  category: string;
+  details?: string;
 }
 
 export interface KnowledgeEdge {
@@ -22,10 +27,10 @@ export class KnowledgeDataService {
   constructor(private http: HttpClient) { }
 
   getNodes(): Observable<KnowledgeNode[]> {
-    return this.http.get<KnowledgeNode[]>('/assets/mock-nodes.json');
+    return of((mockNodes as any).default as KnowledgeNode[]);
   }
 
   getEdges(): Observable<KnowledgeEdge[]> {
-    return this.http.get<KnowledgeEdge[]>('/assets/mock-edges.json');
+    return of((mockEdges as any).default as KnowledgeEdge[]);
   }
 }

@@ -1,0 +1,27 @@
+.graph-visualizer-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.node-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.node-item {
+  background-color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node-item:hover {
+  background-color: #d0d0d0;
+}

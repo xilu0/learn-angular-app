@@ -3,9 +3,15 @@
     <app-search-bar></app-search-bar>
   </div>
   <div class="graph-container">
-    <app-graph-visualizer></app-graph-visualizer>
+    @if ((nodes$ | async); as nodes) {
+      @if ((edges$ | async); as edges) {
+        <app-graph-visualizer [nodes]="nodes" [edges]="edges" (nodeSelected)="onNodeSelected($event)"></app-graph-visualizer>
+      }
+    } @else {
+      <p>Loading knowledge graph...</p>
+    }
   </div>
   <div class="detail-container">
-    <app-node-detail></app-node-detail>
+    <app-node-detail [node]="selectedNode"></app-node-detail>
   </div>
 </div>

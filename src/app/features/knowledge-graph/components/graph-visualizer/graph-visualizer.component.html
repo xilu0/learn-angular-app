@@ -1,1 +1,11 @@
-<p>graph-visualizer works!</p>
+<div class="graph-visualizer-container">
+  <h3>Knowledge Graph Nodes (Click to select)</h3>
+  <div class="node-list">
+    @for (node of nodes; track node.id) {
+      <div class="node-item" (click)="onNodeClick(node)">
+        {{ node.title }}
+      </div>
+    }
+  </div>
+  <!-- In a real application, a graph visualization library (e.g., D3.js, vis.js) would render the graph here. -->
+</div>

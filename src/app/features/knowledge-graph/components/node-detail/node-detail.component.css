@@ -1,0 +1,29 @@
+.node-detail-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.node-detail-container h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.node-detail-container p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.node-detail-container strong {
+  color: #222;
+}
+
+.node-detail-container pre {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}

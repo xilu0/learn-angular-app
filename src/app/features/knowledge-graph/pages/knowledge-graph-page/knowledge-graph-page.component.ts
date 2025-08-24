@@ -22,12 +22,17 @@ export class KnowledgeGraphPageComponent implements OnInit {
 
   nodes$!: Observable<KnowledgeNode[]>;
   edges$!: Observable<KnowledgeEdge[]>;
+  selectedNode: KnowledgeNode | null = null;
 
   constructor(private dataService: KnowledgeDataService) { }
 
   ngOnInit(): void {
     this.nodes$ = this.dataService.getNodes();
     this.edges$ = this.dataService.getEdges();
+  }
+
+  onNodeSelected(node: KnowledgeNode): void {
+    this.selectedNode = node;
   }
 
 }
